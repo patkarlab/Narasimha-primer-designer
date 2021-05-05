@@ -1,7 +1,7 @@
 # NARASIMHA Primer Designer
 
 ## Introduction
-A program to generate primers for the NARASIMHA Assay: https://www.nature.com/articles/s41408-020-0313-6
+A program to generate primers for the NARASIMHA Assay for Targeted RNA Sequencing to identify Chimeric Gene Fusions: https://www.nature.com/articles/s41408-020-0313-6  
 
 ## 1. Prerequisites
 python=3.6  
