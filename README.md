@@ -43,10 +43,14 @@ or create and activate environment in scripts directory
     ./narasimha_minus.py -i lung_panel_v3_format_minus.bed -g /home/reference_genomes/hg19_ref_index/hg19.fasta -l 65
 
 ## 4. Output
-    A "primer_out_*" directory will be created as output. The narasimha_minus.py creates primer_out_minus as output directory, narasimha_plus.py creates primer_out_plus as output directory.
-    The round1 and round2 primers are present in the "final" directory present inside the above folders.
-    The final list of primers for both rounds can be found in "all_primers.csv" in the "final" directory.
-    If no primers are generated, this may be due to short length of sequences.  
+A "primer_out_*" directory will be created as output. The narasimha_minus.py creates primer_out_minus as output directory, narasimha_plus.py creates primer_out_plus as output directory.
+        
+The round1 and round2 primers are present in the "final" directory present inside the above folders.
+        
+The final list of primers for both rounds can be found in "all_primers.csv" in the "final" directory.
+        
+If no primers are generated, this may be due to short length of sequences.  
+        
 ~For sequences less than 50 bases, it is recomended that the sequence of the previous exon also be taken and a fasta file be created. Run the program with the fasta file as input.~
 
 ## 5. Visualization
