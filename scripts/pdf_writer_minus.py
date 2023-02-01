@@ -267,4 +267,4 @@ with open(round2_primer_csv, "r") as file2:
 		else:
 			pass
 
-pdf.output ("test.pdf")
+pdf.output ("test_minus.pdf")
