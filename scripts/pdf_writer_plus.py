@@ -175,7 +175,7 @@ with open(round2_primer_csv, "r") as file2:
 			exon_name2 = target_name2.split('_')[1]
 			gene_exon2 = gene_name2 + '_'  + exon_name2
 			target_seq2 = fragment_dict[gene_exon2]
-			left_primer2 = lines[2].upper()
+			left_primer2_illuminatag = lines[2]	# Modify the left primer to remove the illumina tag
 			right_primer2 = lines[3]
 			start2_index = 0
 			end2_index = 0
@@ -192,6 +192,12 @@ with open(round2_primer_csv, "r") as file2:
 			end2_index_right_primer_sub = len(subset_seq) - 1
 			subset_target_seq = ''
 
+			# The left primer of round 2 has illumina motif attached written in small case
+			left_primer2 = ''
+			for alpha in left_primer2_illuminatag:
+				if alpha.isupper():
+					left_primer2 = left_primer2 + alpha					
+
 			# The right primer of round 2 has illumina motif attached written in small case
 			right_primer_subset = ''
 			for alphabets in right_primer2:
@@ -199,7 +205,7 @@ with open(round2_primer_csv, "r") as file2:
 					right_primer_subset = right_primer_subset + alphabets
 	
 			#print (target_name2 , right_primer_subset, start2_index, end2_index, start2_index_right_primer, end2_index_right_primer)
-			if '_' not in left_primer2:
+			if '_' not in left_primer2_illuminatag:
 				for match in re.finditer(left_primer2, target_seq2):
 					start2_index = match.start()
 					end2_index = match.end()
