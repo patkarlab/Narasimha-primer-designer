@@ -305,7 +305,10 @@ def parseP3_Output(pcrRound):
 				else:
 					if re.search('(?<=PRIMER_LEFT_0_SEQUENCE=).*$',line):
 						seq=re.findall('(?<=PRIMER_LEFT_0_SEQUENCE=).*$',line)[0]
-						left_primers.append(seq)
+						if pcrRound=='1':
+							left_primers.append(seq)
+						elif pcrRound=='2':
+							left_primers.append(illumina_tag.lower()+seq)							
 						error.append('')
 						
 					if re.search('(?<=PRIMER_RIGHT_0_SEQUENCE=).*$',line):
@@ -313,7 +316,8 @@ def parseP3_Output(pcrRound):
 						if pcrRound=='1':
 							right_primers.append(seq)
 						elif pcrRound=='2':
-							right_primers.append(illumina_tag.lower()+seq)
+							#right_primers.append(illumina_tag.lower()+seq)
+							right_primers.append(seq)
 				if re.search('PRIMER_ERROR=',line):
 					left_primers.append("NO_PRIMER_RETURNED")
 					right_primers.append("NO_PRIMER_RETURNED")
