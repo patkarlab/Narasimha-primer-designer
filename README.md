@@ -9,7 +9,8 @@ pandas=1.0.1
 biopython  
 bedtools=2.29.1  
 primer3 (libprimer3 release 2.5.0)  
-isPcr
+isPcr  
+fpdf
 
 or create and activate environment in scripts directory  
 ```
@@ -54,12 +55,7 @@ If no primers are generated, this may be due to short length of sequences.
 ~For sequences less than 50 bases, it is recomended that the sequence of the previous exon also be taken and a fasta file be created. Run the program with the fasta file as input.~
 
 ## 5. Visualization
-  The scripts pdf_writer_minus.py and pdf_writer_plus.py can be used to visulaize the output in pdf format. 
-  *Prerequisite: These scripts require fpdf module. It can be installed using 
-        
-        pip install fpdf
-        conda install fpdf
-        
+  The scripts pdf_writer_minus.py and pdf_writer_plus.py can be used to visulaize the output in pdf format.       
   The inputs required are sequence.fasta, round1primers.csv and round2primers.csv. These files can be found in the primer_out_plus(minus) directory from the above step. 
         
   The round1 and round2 primers are present in the "final" directory present inside the primer_out_plus(minus) folders.
